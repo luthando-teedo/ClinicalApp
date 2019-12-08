@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clinical.Views.MainPage"
+             >
+
+    <StackLayout>
+        <Image Source="landscapeResized.jpg"
+                   Scale="1.2"/>
+        <Frame BackgroundColor="#99EC0303"
+                   HeightRequest="223"
+                   Margin="0,-250,0,0">
+        </Frame>
+
+        <SearchBar BackgroundColor="White"
+                       Margin="15,-200,15,125"
+                       FontAttributes="Italic"
+                       Placeholder="Search...."/>
+
+        <Frame CornerRadius="50" 
+                   HeightRequest="50"
+                   WidthRequest="50"
+                   IsClippedToBounds="True"  
+                   HorizontalOptions="Start"
+                   Margin="20,-40,0,0">
+
+            <Image Source="teedoResized.jpg"
+                       Scale="2.5"/>
+
+        </Frame>
+
+        <Label Text="Luthando"
+                   Margin="120,-85,0,0"
+                   FontSize="35"
+                   TextColor="White"
+                   />
+
+        <Label Text="Sitole"
+                   Margin="265,-53,0,0"
+                   FontSize="35"
+                   TextColor="White"
+                   />
+
+
+        <Label Text="luthando@quirky30.co.za"
+                   Margin="125,-10,0,0"
+                   FontSize="18"/>
+
+        <Frame Margin="10,30,10,0" 
+                   BackgroundColor="#f1f1f1" 
+                   HeightRequest="90"
+                   CornerRadius="10"
+                   >
+
+            <StackLayout>
+                <FlexLayout>
+                    <Label Text="ID: "/>
+                    <Label Text="9903244450080"
+                                Margin="0,0,80,0"/>
+                </FlexLayout>
+                <FlexLayout>
+                    <Label Text="Card Number: 1219"/>
+                    <Label Text="15"/>
+                </FlexLayout>
+
+                <FlexLayout>
+                    <Label Text="Address: "/>
+                    <Label Text="31339 Dyokwe Street"/>
+                </FlexLayout>
+
+                <FlexLayout>
+                    <Label Text="Phone: "/>
+                    <Label Text="084 7785 429"/>
+                </FlexLayout>
+
+                <Button Text="View Folder"
+                            TextColor="white"
+                            BackgroundColor="lightgray"
+                            FontAttributes="Bold"
+                            Margin="270,-80,0,0"
+                            CornerRadius="100"
+                            FontSize="8"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            HorizontalOptions="Center"
+                            />
+            </StackLayout>
+        </Frame>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="UPCOMING APPOINTMENTS"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Margin="15,15,0,0"
+                       FontAttributes="Bold"/>
+
+            <Label Text="APPOINTMENTS HISTORY"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Margin="15,15,0,0"
+                       FontAttributes="Bold"/>
+
+        </Grid>
+
+        <FlexLayout>
+            <StackLayout>
+                <Frame WidthRequest="150"
+                           HeightRequest="30"
+                           BackgroundColor="#f1f1f1" 
+                           Margin="10,0,0,0">
+                    <!--<StackLayout>
+                            <Label Text="Date: 29 November 2019"/>
+                        </StackLayout>-->
+                    <ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Label Text="Date: "/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+
+            </StackLayout>
+
+        </FlexLayout>
+    </StackLayout>
+
+</ContentPage>

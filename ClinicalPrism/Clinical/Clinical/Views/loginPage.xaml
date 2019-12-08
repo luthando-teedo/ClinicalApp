@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Clinical.Views.loginPage"
+             BackgroundImageSource="unnamed.jpg">
+    
+        
+        <StackLayout>
+            <!-- Place new controls here -->
+            <StackLayout BackgroundColor="#80000000"
+                     HorizontalOptions="Center"  
+                     HeightRequest="1000"
+                     Padding="50,150,50,0">
+
+                <Image Source="clinicalOne.png"                
+                   Margin="0,0,0,20"
+                   Scale=".8"/>
+
+                <Image Source="personTwo.png"
+               Margin="250,0,0,-36"/>
+
+                <Entry Placeholder="Username" 
+               WidthRequest="300"
+               PlaceholderColor="White"
+               Text="{Binding LoginClient.UserName}"/>
+
+                <Image Source="lock.png"
+                   Margin="250,0,0,-36"/>
+
+                <Entry Placeholder="Password"
+                   Margin="0,0,0,20"
+                   PlaceholderColor="White"
+                   Text="{Binding LoginClient.Passrd}"/>
+
+                <Button Text="LOGIN" 
+                CornerRadius="50" 
+                BackgroundColor="White"  
+                TextColor="Red"
+                Margin="0,0,0,20"
+                Command="{Binding LoginCommand}"/>
+                <FlexLayout>
+                    <Label Text="Are you new here?"
+                   Margin="40,0,0,0"
+                   TextColor="gray"/>
+                    
+                    <Button Text="SIGN UP"
+                    BackgroundColor="Transparent"
+                    Margin="0,-15,0,0"
+                    TextColor="DarkRed"
+                    Command="{Binding SignUpCommand}"/>
+                </FlexLayout>
+            </StackLayout>
+        </StackLayout>
+        
+    
+</ContentPage>

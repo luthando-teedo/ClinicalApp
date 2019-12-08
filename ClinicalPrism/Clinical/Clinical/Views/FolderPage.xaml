@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Clinical.Views.FolderPage">
+    <ContentPage>
+    
+        <StackLayout BackgroundColor="#80000000">
+
+            <Frame CornerRadius="50" 
+                   HeightRequest="30"
+                   WidthRequest="30"
+                   IsClippedToBounds="True"  
+                   HorizontalOptions="Start"
+                   Margin="20,20,0,0">
+
+
+
+                <Image Source="teedoResized.jpg"
+                       Scale="2.5"/>
+
+            </Frame>
+            <FlexLayout Margin="0,-26,0,0">
+                <Label Text="{Binding Name}"
+                   Margin="110,-45,0,0"
+                   FontSize="35"
+                   TextColor="White"/>
+
+                <Label Text="{Binding Surname}"
+                   Margin="15,-45,0,0"
+                   FontSize="35"
+                   TextColor="White"/>
+            </FlexLayout>
+
+            <Label Text="{Binding ElectronicMails}"
+                   TextColor="Gray"
+                   Margin="125,-10,0,0"
+                   FontSize="18"/>
+
+            <Frame BackgroundColor="#ffffff"
+                   CornerRadius="20"
+                   Padding="20,15,0,20"
+                   Margin="20,40,20,0"
+                   HeightRequest="400">
+                <StackLayout>
+                    <FlexLayout>
+                        <Label Text="ID: "/>
+                        <Label Text="{Binding IdNumber}"/>
+                    </FlexLayout>
+
+                    <FlexLayout>
+                        <Label Text="Card Number: 1219"/>
+                        <Label Text="{Binding ID}"/>
+                    </FlexLayout>
+
+                    <FlexLayout>
+                        <Label Text="Address: "/>
+                        <Label Text="{Binding StreetNames}"/>
+                    </FlexLayout>
+
+                    <FlexLayout>
+                        <Label Text="Phone: "/>
+                        <Label Text="{Binding PhoneNumber}"/>
+                    </FlexLayout>
+
+                    <Label Text="Daignosis: " FontAttributes="Bold"/>
+                    <ScrollView>
+
+                        <Label Text="Contrary to popular belief, Lorem Ipsum 
+                               is not simply random text. It has roots in a 
+                               piece of classical Latin literature from 45 BC, 
+                               making it over 2000 years old. Richard McClintock, 
+                               a Latin professor at Hampden-Sydney College 
+                               in Virginia, looked up one of the more obscure 
+                               Latin words, consectetur, from a Lorem Ipsum passage, 
+                               and going through the cites of the word in 
+                               classical literature, discovered the undoubtable 
+                               source. Lorem Ipsum comes from sections 1.10.32 
+                               and 1.10.33 of de Finibus Bonorum et Malorum 
+                               (The Extremes of Good and Evil) by Cicero, written in 45 BC. 
+                               This book is a treatise on the theory of ethics, very popular 
+                               during the Renaissance. The first line of Lorem Ipsum, 
+                               Lorem ipsum dolor sit amet, comes from a line in section 1.10.32.
+                               The standard chunk of Lorem Ipsum used since the 1500s is 
+                               reproduced below for those interested. 
+                               Sections 1.10.32 and 1.10.33 from de Finibus 
+                               Bonorum et Malorum by Cicero are also 
+                               reproduced in their exact original form, 
+                               accompanied by English versions from the 1914 translation by H. Rackham.
+                               There are many variations of passages of Lorem Ipsum available, 
+                               but the majority have suffered alteration in some form, 
+                               by injected humour, or randomised words which don't look 
+                               even slightly believable. If you are going to use a passage of Lorem Ipsum, 
+                               you need to be sure there isn't anything embarrassing hidden 
+                               in the middle of text. All the Lorem Ipsum generators on the 
+                               Internet tend to repeat predefined chunks as necessary, making 
+                               this the first true generator on the Internet. 
+                               It uses a dictionary of over 200 Latin words, 
+                               combined with a handful of model sentence structures, 
+                               to generate Lorem Ipsum which looks reasonable. 
+                               The generated Lorem Ipsum is therefore always free from repetition, 
+                               injected humour, or non-characteristic words etc."/>
+                    </ScrollView>
+
+                </StackLayout>
+
+            </Frame>
+
+        </StackLayout>
+    </ContentPage>
+</CarouselPage>
