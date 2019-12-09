@@ -21,6 +21,16 @@ namespace Clinical.ViewModels
             set { SetProperty(ref _loggedInUser, value); }
         }
 
+        
+        private DelegateCommand _ViewFolderCommand;
+
+        public DelegateCommand ViewFolderCommand =>
+            _ViewFolderCommand ?? (_ViewFolderCommand = new DelegateCommand(ExecuteViewFolderCommand));
+
+        private async void ExecuteViewFolderCommand()
+        {
+            await NavigationService.NavigateAsync("MasterDetail/NavigationPage/FolderPage", useModalNavigation: true);
+        }
 
         public DashBoardPageViewModel(INavigationService navigation, IUserProfile userProfile) : base(navigation)
         {

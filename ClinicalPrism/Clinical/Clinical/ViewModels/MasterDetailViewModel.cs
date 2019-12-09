@@ -52,10 +52,7 @@ namespace Clinical.ViewModels
         }
 
         public IList<MenuItem> allMenuItemsProperty;
-        //public DelegateCommand NavigateFolder { get; set; }
-        //public DelegateCommand BookAppt { get; set; }
-        //public DelegateCommand NavigateHome { get; set; }
-        //public DelegateCommand loginCommand { get; set; }
+        
 
         public MasterDetailViewModel(INavigationService navigationService, ISecurityService securityService, IEventAggregator eventAggregator) : base(navigationService)
         {
@@ -64,17 +61,9 @@ namespace Clinical.ViewModels
 
             MenuItems = new ObservableCollection<MenuItem>(_securityService.GetAllowedAccessItems());
 
-            //_eventAggregator.GetEvent<LoginMessage>().Subscribe(LoginEvent);
-            _eventAggregator.GetEvent<LogOutMessage>().Subscribe(LogOutEvent);
-
-            //NavigateFolder = new DelegateCommand(ExecuteNavigateCommand);
-            //BookAppt = new DelegateCommand(ExecuteBookAppt);
-            //NavigateHome = new DelegateCommand(ExecuteNavigateHome);
-            //loginCommand = new DelegateCommand(ExecuteloginCommand);
-
             
-            //var stuff = new FakeSecurityService();
-            //allMenuItemsProperty = stuff.allMenuItems;
+            _eventAggregator.GetEvent<LogOutMessage>().Subscribe(LogOutEvent);
+          
         }
 
         public void LoginEvent(UserProfile userProfile)
@@ -98,22 +87,6 @@ namespace Clinical.ViewModels
          
         }
 
-        //private void ExecuteNavigateCommand()
-        //{
-        //    NavigationService.NavigateAsync("NavigationPage/FolderPage");
-        //}
-        //private void ExecuteloginCommand()
-        //{
-        //    NavigationService.NavigateAsync("NavigationPage/loginPage");
-        //}
         
-        //private void ExecuteNavigateHome()
-        //{
-        //    NavigationService.NavigateAsync("NavigationPage/MainPage");
-        //}
-        //private void ExecuteBookAppt()
-        //{
-        //    NavigationService.NavigateAsync("NavigationPage/AppointmentPage");
-        //}
     }
 }

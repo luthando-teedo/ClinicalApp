@@ -86,7 +86,7 @@ namespace Clinical.ViewModels
                         if (loginResult)
                         {
 
-                        _userProfile.SetLoggedInUser(clientDetail);
+                            _userProfile.SetLoggedInUser(clientDetail);
 
                             _eventAggregator.GetEvent<LoginMessage>().Publish();
                         }

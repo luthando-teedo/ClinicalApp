@@ -100,7 +100,7 @@ namespace Clinical.Services
             menuItem = new MenuItem();
             menuItem.MenuItemId = 3;
             menuItem.MenuItemName = "Request Delivery";
-            menuItem.NavigationPath = "NavigationPage/MapsView";
+            menuItem.NavigationPath = "NavigationPage/MapsViewPage";
             menuItem.MenuOrder = 3;
             menuItem.MenuType = MenuTypeEnum.Secured;
             menuItem.ImageName = "location.png";
@@ -118,6 +118,16 @@ namespace Clinical.Services
             _allMenuItems.Add(menuItem);
 
             menuItem = new MenuItem();
+            menuItem.MenuItemId = 6;
+            menuItem.MenuItemName = "Dashboard";
+            menuItem.NavigationPath = "NavigationPage/DashBoardPage";
+            menuItem.MenuOrder = 1;
+            menuItem.MenuType = MenuTypeEnum.Secured;
+            menuItem.ImageName = "home.png";
+
+            _allMenuItems.Add(menuItem);
+
+            menuItem = new MenuItem();
             menuItem.MenuItemId = 5;
             menuItem.MenuItemName = "About Us";
             menuItem.NavigationPath = "NavigationPage/ViewPdfView";
@@ -125,15 +135,18 @@ namespace Clinical.Services
             menuItem.MenuType = MenuTypeEnum.UnSecured;
             menuItem.ImageName = "infor.png";
 
+            
+
+
             _allMenuItems.Add(menuItem);
 
             menuItem = new MenuItem();
             menuItem.MenuItemId = 6;
-            menuItem.MenuItemName = "";
-            menuItem.NavigationPath = "";
+            menuItem.MenuItemName = "Dashboard";
+            menuItem.NavigationPath = "NavigationPage/DashBoardPage";
             menuItem.MenuOrder = 1;
-            menuItem.MenuType = MenuTypeEnum.UnSecured;
-            menuItem.ImageName = "splash_logo.png";
+            menuItem.MenuType = MenuTypeEnum.Secured;
+            menuItem.ImageName = "home.png";
 
 
             allMenuItems = _allMenuItems;

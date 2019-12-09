@@ -16,7 +16,7 @@
             </Frame>
 
             <SearchBar BackgroundColor="White"
-                       Margin="15,-210,15,125"
+                       Margin="15,-200,15,125"
                        FontAttributes="Italic"
                        Placeholder="Search...."/>
 
@@ -27,20 +27,22 @@
                    HorizontalOptions="Start"
                    Margin="20,-30,0,0">
 
-                <Image Source="teedoResized.jpg"
-                       Scale="2.5"/>
+                <Image Source="{Binding LoggedInUser.Image}"
+                       Scale="2.5"
+                        />
 
             </Frame>
 
 
             <Label Text="{Binding LoggedInUser.FullName}"
-                   Margin="120,-85,0,0"
+                   Margin="120,-95,0,0"
                    FontSize="35"
                    TextColor="White"
                    />
             <Label Text="{Binding LoggedInUser.EmailAddress}"
                    Margin="125,-10,0,0"
-                   FontSize="18"/>
+                   FontSize="18"
+                   />
 
             <Frame Margin="10,30,10,0" 
                    BackgroundColor="#f1f1f1" 
@@ -79,7 +81,7 @@
                             HeightRequest="60"
                             WidthRequest="60"
                             HorizontalOptions="Center"
-                            />
+                            Command="{Binding ViewFolderCommand}"/>
                 </StackLayout>
             </Frame>
 

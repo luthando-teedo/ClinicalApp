@@ -21,7 +21,8 @@
                    HorizontalOptions="Center"
                    Margin="0,-50,0,0">
 
-                <Image Source="person.png"/>
+                <Image Source="{Binding PickImage,Path= Stream}"
+                       Scale="2.2"/>
 
             </Frame>
 
@@ -33,9 +34,9 @@
                    HorizontalOptions="Center"
                    Margin="50,-40,0,0">
 
-                <Image Source="loadPic.png"
+                <ImageButton Source="loadPic.png"
                        Scale="15"
-                       />
+                       Command="{Binding PickPhotoCommand}"/>
 
             </Frame>
 

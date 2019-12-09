@@ -2,6 +2,7 @@
 using Clinical.Model.Security;
 using Clinical.Services.Interface;
 using Clinical.Services.Interfaces;
+using Plugin.Media;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -10,11 +11,14 @@ using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace Clinical.ViewModels
 {
     public class RegPageViewModel : ViewModelBase
     {
+        public string  filePath { get; set; }
+        private IPageDialogService _dialogService;
         private ISecurityService _securityService;
         private IEventAggregator _eventAggregator;
         private IDatabase _database;
@@ -26,8 +30,49 @@ namespace Clinical.ViewModels
         public DelegateCommand<ClientDetails> SubmitCommand =>
     _submitCommand ?? (_submitCommand = new DelegateCommand<ClientDetails>(ExecuteSubmitCommand));
 
+        private DelegateCommand _pickPhotoCommand;
+        public DelegateCommand PickPhotoCommand =>
+            _pickPhotoCommand ?? (_pickPhotoCommand = new DelegateCommand(ExecutePickPhotoCommand));
+
+        private ImageSource _pickImage;
+
+        public ImageSource PickImage
+        {
+            get { return _pickImage; }
+            set { SetProperty(ref _pickImage, value); }
+        }
+
+
+        private async void ExecutePickPhotoCommand()
+        {
+            await CrossMedia.Current.Initialize();
+
+            var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            {
+
+            });
+
+
+            if (file == null)
+                return;
+
+            filePath = file.Path;
+            await _dialogService.DisplayAlertAsync("File Location", filePath, "OK");
+
+
+
+            PickImage = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                return stream;
+            });
+
+        }
+
         private async void ExecuteSubmitCommand(ClientDetails clientDetails)
         {
+            var image = filePath;
+            MyClient.Image = image;
             var clientDetail = await _database.GetClientDetailsByUserName(MyClient.IdNumber);
 
             if (MyClient.IdNumber == null)
@@ -73,7 +118,7 @@ namespace Clinical.ViewModels
                 {
                     _eventAggregator.GetEvent<LoginMessage>().Publish();
                 }
-                await NavigationService.NavigateAsync("MasterDetail/NavigationPage/DashBoardPage", useModalNavigation: true);
+                await NavigationService.NavigateAsync("MasterDetail/NavigationPage/loginPage", useModalNavigation: true);
 
                 
             }
@@ -84,6 +129,8 @@ namespace Clinical.ViewModels
             _securityService = securityService;
             _database = database;
             _eventAggregator = eventAggregator;
+
+            _dialogService = pageDialogService;
 
             _pageDialogService = pageDialogService;
             var ClientDetails = new ClientDetails();

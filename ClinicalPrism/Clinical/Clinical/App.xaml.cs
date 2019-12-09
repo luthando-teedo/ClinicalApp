@@ -48,6 +48,8 @@ namespace Clinical
             containerRegistry.RegisterForNavigation<loginPage, loginPageViewModel>();
             containerRegistry.RegisterForNavigation<DashBoardPage, DashBoardPageViewModel>();
             containerRegistry.RegisterForNavigation<RegPage, RegPageViewModel>();
+
+            containerRegistry.RegisterForNavigation<PickPhoto, PickPhotoViewModel>();
         }
     }
 }

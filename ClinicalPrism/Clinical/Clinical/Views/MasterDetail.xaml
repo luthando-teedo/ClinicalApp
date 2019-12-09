@@ -14,15 +14,17 @@
                 <!-- TODO: // Update the Layout and add some real menu items  -->
                 <Image Source="landscapeResized.jpg"
                        Scale="1.2"
-                       Margin="0,-5,0,-55"/>
+                       Margin="0,-5,0,-50"/>
                 
                 <Frame BackgroundColor="#99000000"
-                       HeightRequest="180"
+                       HeightRequest="215"
                        Scale="1.2"
-                       Margin="0,-120,0,0">
-                    <Image Source="{Binding ProfileImage}"/>
+                       Margin="0,-130,0,10">
+                    <Image Source="clinicalOne.png"
+                           Scale=".8"/>
                 </Frame>
 
+                
                 <ListView ItemsSource="{Binding MenuItems}" 
                           HasUnevenRows="True" 
                           SelectionMode="None" 
@@ -67,123 +69,8 @@
                     </ListView.Behaviors>
 
                 </ListView>
-                
-
-                <!--<Frame CornerRadius="50" 
-                   HeightRequest="50"
-                   WidthRequest="50"
-                   IsClippedToBounds="True"  
-                   HorizontalOptions="Start"
-                   Margin="5,-130,0,0">
-
-                    <Image Source="teedoResized.jpg"
-                           Scale="2.5"
-                           />
-                </Frame>
-                <Label Text="Luthando Sitole"
-                       TextColor="White"
-                       FontSize="30"
-                       Margin="100,-80,0,0"/>
-                <Label Text="Luthando@quirky30.co.za"
-                       TextColor="#f1f1f1"
-                       FontSize="16"
-                       Margin="105,-5,0,0"/>
-                
-                <FlexLayout>
-                    <Image Source="home.png"
-                           Margin="0,55,0,0"/>
-                    <Button Text="Home" 
-                            BackgroundColor="Transparent"
-                            Margin="-10,60,140,0"
-                            Command="{Binding NavigateHome}"
-                            HorizontalOptions="Center"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            CommandParameter="ViewA" />
-                </FlexLayout>
-
-                <FlexLayout>
-                    <Image Source="openFolder.png"
-                           />
-                    <Button Text="View Folder" 
-                            BackgroundColor="Transparent"
-                            Margin="-5,0,140,0"
-                            Command="{Binding NavigateFolder}"
-                            HorizontalOptions="Center"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            CommandParameter="ViewA" />
-                </FlexLayout>
-
-                <FlexLayout>
-                    <Image Source="profile.png"
-                           />
-                    <Button Text="Edit Profile" 
-                            BackgroundColor="Transparent"
-                            Margin="-5,0,140,0"
-                            Command="{Binding NavigateCommand}"
-                            HorizontalOptions="Center"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            CommandParameter="ViewA" />
-                </FlexLayout>
-
-                <FlexLayout>
-                    <Image Source="book.png"
-                           />
-                    <Button Text="Book Appt" 
-                            BackgroundColor="Transparent"
-                            Margin="-5,0,140,0"
-                            Command="{Binding BookAppt}"
-                            HorizontalOptions="Center"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            CommandParameter="ViewA" />
-                </FlexLayout>
-
-                <FlexLayout>
-                    <Image Source="location.png"
-                           />
-                    <Button Text="Request Delivery" 
-                            BackgroundColor="Transparent"
-                            Margin="-5,0,80,0"
-                            Command="{Binding NavigateCommand}"
-                            HorizontalOptions="Center"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            CommandParameter="ViewA" />
-                </FlexLayout>
-
-                <FlexLayout>
-                    <Image Source="settings.png"
-                           />
-                    <Button Text="settings" 
-                            BackgroundColor="Transparent"
-                            Margin="-5,0,80,0"
-                            Command="{Binding NavigateCommand}"
-                            HorizontalOptions="Center"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            CommandParameter="ViewA" />
-                </FlexLayout>
-
-                <StackLayout BackgroundColor="Black"
-                             HeightRequest=".5"></StackLayout>
-
-                <FlexLayout                                                                                
-                            Margin="0,30,0,0">
-                    <Image Source="exit.png"
-                           />
-                    <Button Text="Sign Out" 
-                            BackgroundColor="Transparent"
-                            Margin="-5,0,140,0"
-                            Command="{Binding loginCommand}"
-                            HorizontalOptions="Center"
-                            FontSize="18"
-                            FontAttributes="Bold"
-                            CommandParameter="ViewA" />
-                </FlexLayout>-->
-            </StackLayout>
+           
+                </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
     

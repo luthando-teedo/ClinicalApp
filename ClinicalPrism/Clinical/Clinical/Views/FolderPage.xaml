@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Clinical.Views.FolderPage">
-    <ContentPage>
-    
+             x:Class="Clinical.Views.FolderPage"
+            BackgroundImageSource="unnamed.jpg">
         <StackLayout BackgroundColor="#80000000">
 
             <Frame CornerRadius="50" 
@@ -17,26 +16,23 @@
 
 
 
-                <Image Source="teedoResized.jpg"
-                       Scale="2.5"/>
+                <Image Source="{Binding LoggedInUser.Image}"
+                       Scale="3.1"/>
 
             </Frame>
             <FlexLayout Margin="0,-26,0,0">
-                <Label Text="{Binding Name}"
+                <Label Text="{Binding LoggedInUser.FullName}"
                    Margin="110,-45,0,0"
                    FontSize="35"
                    TextColor="White"/>
-
-                <Label Text="{Binding Surname}"
-                   Margin="15,-45,0,0"
-                   FontSize="35"
-                   TextColor="White"/>
+                
             </FlexLayout>
 
-            <Label Text="{Binding ElectronicMails}"
-                   TextColor="Gray"
+            <Label Text="{Binding LoggedInUser.EmailAddress}"
+                   TextColor="White"
                    Margin="125,-10,0,0"
-                   FontSize="18"/>
+                   FontSize="18"
+                   />
 
             <Frame BackgroundColor="#ffffff"
                    CornerRadius="20"
@@ -46,22 +42,22 @@
                 <StackLayout>
                     <FlexLayout>
                         <Label Text="ID: "/>
-                        <Label Text="{Binding IdNumber}"/>
+                        <Label Text="{Binding LoggedInUser.IdNumber}"/>
                     </FlexLayout>
 
                     <FlexLayout>
                         <Label Text="Card Number: 1219"/>
-                        <Label Text="{Binding ID}"/>
+                        <Label Text="{Binding LoggedInUser.ID}"/>
                     </FlexLayout>
 
                     <FlexLayout>
                         <Label Text="Address: "/>
-                        <Label Text="{Binding StreetNames}"/>
+                        <Label Text="{Binding LoggedInUser.PostalAddress}"/>
                     </FlexLayout>
 
                     <FlexLayout>
                         <Label Text="Phone: "/>
-                        <Label Text="{Binding PhoneNumber}"/>
+                        <Label Text="{Binding LoggedInUser.PhoneNumber}"/>
                     </FlexLayout>
 
                     <Label Text="Daignosis: " FontAttributes="Bold"/>
@@ -109,4 +105,3 @@
 
         </StackLayout>
     </ContentPage>
-</CarouselPage>
