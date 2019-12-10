@@ -52,7 +52,7 @@ namespace Clinical
             //containerRegistry.RegisterForNavigation<PickPhoto, MapsView>();
             containerRegistry.RegisterForNavigation<RequestPage, RequestPageViewModel>();
             //containerRegistry.RegisterForNavigation<MyMaps, MyMapsViewModel>();
-            containerRegistry.RegisterForNavigation<PrismContentPage1, PrismContentPage1ViewModel>();
+            containerRegistry.RegisterForNavigation<PrismContentPage1, CustomMapPage>();
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace Clinical.ViewModels
 {
-    public class PrismContentPage1ViewModel : BindableBase
+    public class CustomMapPage : BindableBase
     {
-        public PrismContentPage1ViewModel()
+        public CustomMapPage()
         {
 
         }
