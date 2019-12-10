@@ -2,9 +2,9 @@
 
 namespace Clinical.Views
 {
-    public partial class PickPhoto : ContentPage
+    public partial class RequestPage : ContentPage
     {
-        public PickPhoto()
+        public RequestPage()
         {
             InitializeComponent();
         }

@@ -73,7 +73,7 @@ namespace Clinical.ViewModels
 
             MenuItems = new ObservableCollection<MenuItem>(_securityService.GetAllowedAccessItems());
 
-            NavigationService.NavigateAsync("NavigationPage/MapsView");
+            NavigationService.NavigateAsync("NavigationPage/RequestPage");
          
         }
 
