@@ -100,7 +100,7 @@ namespace Clinical.Services
             menuItem = new MenuItem();
             menuItem.MenuItemId = 3;
             menuItem.MenuItemName = "Request Delivery";
-            menuItem.NavigationPath = "NavigationPage/FolderPage";
+            menuItem.NavigationPath = "NavigationPage/RequestPage";
             menuItem.MenuOrder = 3;
             menuItem.MenuType = MenuTypeEnum.Secured;
             menuItem.ImageName = "location.png";
