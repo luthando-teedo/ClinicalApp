@@ -1,4 +1,5 @@
-﻿using Clinical.ViewModels;
+﻿using Clinical.Model;
+using Clinical.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -55,7 +55,7 @@ namespace Clinical.ViewModels
 
             if (file == null)
                 return;
-
+            //this is getting the file path
             filePath = file.Path;
             await _dialogService.DisplayAlertAsync("File Location", filePath, "OK");
 

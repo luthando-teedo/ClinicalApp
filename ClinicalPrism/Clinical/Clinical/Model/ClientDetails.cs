@@ -17,6 +17,7 @@ namespace Clinical.ViewModels
         public string PhoneNumber { get; set; }
         public string EmailAddress { get; set; }
         public string PostalAddress { get; set; }
+        public List<string> Appointment { get; set; }
 
 
     }

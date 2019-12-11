@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Clinical.Model
 {
-    class ApptsClass
+    public class ApptsClass
     {
         public string Date { get; set; }
         public string Reason { get; set; }
