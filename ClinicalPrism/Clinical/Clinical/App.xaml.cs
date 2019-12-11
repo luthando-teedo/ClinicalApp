@@ -50,9 +50,11 @@ namespace Clinical
             containerRegistry.RegisterForNavigation<RegPage, RegPageViewModel>();
 
             //containerRegistry.RegisterForNavigation<PickPhoto, MapsView>();
-            containerRegistry.RegisterForNavigation<RequestPage, RequestPageViewModel>();
+            //containerRegistry.RegisterForNavigation<RequestPage, RequestPageViewModel>();
             //containerRegistry.RegisterForNavigation<MyMaps, MyMapsViewModel>();
-            containerRegistry.RegisterForNavigation<PrismContentPage1, CustomMapPage>();
+            //containerRegistry.RegisterForNavigation<PrismContentPage1, CustomMapPage>();
+
+            containerRegistry.RegisterForNavigation<RequestPage, RequestPageViewModel>();
         }
     }
 }

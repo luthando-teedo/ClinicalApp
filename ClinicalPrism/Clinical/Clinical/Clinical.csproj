@@ -30,10 +30,10 @@
     <EmbeddedResource Update="Views\MasterDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CustomMapPage.xaml">
+    <EmbeddedResource Update="Views\RegPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RegPage.xaml">
+    <EmbeddedResource Update="Views\RequestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -42,12 +42,6 @@
     <Folder Include="Enums\Security\" />
     <Folder Include="Model\" />
     <Folder Include="Converters\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Views\CustomMapPage.xaml.cs">
-      <DependentUpon>CustomMapPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
 </Project>

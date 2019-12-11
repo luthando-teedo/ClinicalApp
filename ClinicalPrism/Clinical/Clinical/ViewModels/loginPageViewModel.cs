@@ -53,28 +53,28 @@ namespace Clinical.ViewModels
 
         async void ExecuteLoginCommand()
         {
+            
+                var clientDetail = await _database.GetClientDetailsByUserName(LoginClient.UserName.ToLower());
 
-            var clientDetail = await _database.GetClientDetailsByUserName(LoginClient.UserName);
 
-
-            if (LoginClient.UserName == null)
-            {
-                await _pageDialogService.DisplayAlertAsync("Alert", "Username is required!", "ok");
-            }
-            else if (LoginClient.UserName != clientDetail.UserName || LoginClient.Passrd != clientDetail.Passrd)
-            {
-                await _pageDialogService.DisplayAlertAsync("Alert", "Wrong Password or Username!", "ok");
-            }
-            else if (LoginClient.UserName != clientDetail.UserName && LoginClient.Passrd != clientDetail.Passrd)
-            {
-                await _pageDialogService.DisplayAlertAsync("Alert", "Wrong Password or Username!", "ok");
-            }
-            else if (LoginClient.Passrd == null)
-            {
-                await _pageDialogService.DisplayAlertAsync("Alert", "Password is required!", "ok");
-            }
-            else
-            {
+                if (LoginClient.UserName.ToLower() == null)
+                {
+                    await _pageDialogService.DisplayAlertAsync("Alert", "Username is required!", "ok");
+                }
+                else if (LoginClient.UserName.ToLower() != clientDetail.UserName.ToLower() || LoginClient.Passrd != clientDetail.Passrd)
+                {
+                    await _pageDialogService.DisplayAlertAsync("Alert", "Wrong Password or Username!", "ok");
+                }
+                else if (LoginClient.UserName.ToLower() != clientDetail.UserName.ToLower() && LoginClient.Passrd != clientDetail.Passrd)
+                {
+                    await _pageDialogService.DisplayAlertAsync("Alert", "Wrong Password or Username!", "ok");
+                }
+                else if (LoginClient.Passrd == null)
+                {
+                    await _pageDialogService.DisplayAlertAsync("Alert", "Password is required!", "ok");
+                }
+                else
+                {
                     if (clientDetail.Passrd == LoginClient.Passrd)
                     {
                         passwExist = true;
@@ -82,7 +82,7 @@ namespace Clinical.ViewModels
                         var loginResult = _securityService.LogIn("Test User", "Password");
 
                         // I may have gotten a user profile somewhere..  Use whatever your app does
-           
+
                         if (loginResult)
                         {
 
@@ -99,14 +99,14 @@ namespace Clinical.ViewModels
                     {
                         passwExist = false;
                     }
-                
 
-                if (passwExist == false)
-                {
-                    await _pageDialogService.DisplayAlertAsync("Alert", "Incorrect Password Please try again", "ok");
+
+                    if (passwExist == false)
+                    {
+                        await _pageDialogService.DisplayAlertAsync("Alert", "Incorrect Password Please try again", "ok");
+                    }
                 }
-            }                     
-           
+ 
         }
 
         void ExecuteSignUpCommand()

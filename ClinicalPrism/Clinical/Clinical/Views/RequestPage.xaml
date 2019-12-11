@@ -3,41 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Clinical.Views.RequestPage"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+             x:Class="Clinical.Views.RequestPage">
 
-    <Grid Margin="10,35,10,10">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <maps:Map x:Name="map"
-                  ItemsSource="{Binding Locations}">
-            <maps:Map.ItemTemplate>
-                <DataTemplate>
-                    <maps:Pin Position="{Binding Position}"
-                              Address="{Binding Address}"
-                              Label="{Binding Description}" />
-                </DataTemplate>
-            </maps:Map.ItemTemplate>
-        </maps:Map>
-        <ScrollView Grid.Row="1"
-                    Orientation="Horizontal">
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="Center">
-                <Button Text="Add"
-                        Command="{Binding AddLocationCommand}" />
-                <Button Text="Remove"
-                        Command="{Binding RemoveLocationCommand}" />
-                <Button Text="Clear"
-                        Command="{Binding ClearLocationsCommand}" />
-                <Button Text="Update"
-                        Command="{Binding UpdateLocationsCommand}" />
-                <Button Text="Replace"
-                        Command="{Binding ReplaceLocationCommand}" />
-            </StackLayout>
-        </ScrollView>
-    </Grid>
+    <StackLayout>
+        <Frame CornerRadius="50" 
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   IsClippedToBounds="True"  
+                   HorizontalOptions="Start"
+                   Margin="20,50,0,0">
 
+            <Image Source="{Binding LoggedInUser.Image}"
+                       Scale="2.5"
+                        />
 
+        </Frame>
+        <Label Text="{Binding LoggedInUser.FullName}"
+               Margin="130,-80,0,0"
+               FontSize="Title"/>
+        <Label Text="{Binding LoggedInUser.EmailAddress}"
+               Margin="130,-10,0,0"/>
+        
+    </StackLayout>
+  
 </ContentPage>
