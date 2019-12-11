@@ -1,4 +1,5 @@
 ﻿using Clinical.Model;
+using Clinical.Services.Interface;
 using Clinical.Services.Interfaces;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -12,6 +13,7 @@ namespace Clinical.ViewModels
     public class RequestPageViewModel : ViewModelBase
     {
         private IUserProfile _userProfile;
+        private IDatabase _database;
 
         public ApptsClass appointment { get; set; }
 
@@ -22,9 +24,11 @@ namespace Clinical.ViewModels
             get { return _loggedInUser; }
             set { SetProperty(ref _loggedInUser, value); }
         }
-        public RequestPageViewModel(INavigationService navigation, IUserProfile userProfile) : base(navigation)
+        public RequestPageViewModel(INavigationService navigation, IUserProfile userProfile, IDatabase database) : base(navigation)
         {
             _userProfile = userProfile;
+
+            _database = database;
         }
 
         public override void Initialize(INavigationParameters parameters)

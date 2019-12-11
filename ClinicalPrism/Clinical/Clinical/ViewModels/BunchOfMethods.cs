@@ -1,4 +1,5 @@
-﻿using Clinical.Services.Interface;
+﻿using Clinical.Model;
+using Clinical.Services.Interface;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace Clinical.ViewModels
 
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<ClientDetails>().Wait();
+            database.CreateTableAsync<Appointment>().Wait();
         }
 
         private string GetDbPath()
