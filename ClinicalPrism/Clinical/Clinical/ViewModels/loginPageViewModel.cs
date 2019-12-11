@@ -53,7 +53,8 @@ namespace Clinical.ViewModels
 
         async void ExecuteLoginCommand()
         {
-            
+            try
+            {
                 var clientDetail = await _database.GetClientDetailsByUserName(LoginClient.UserName.ToLower());
 
 
@@ -106,6 +107,12 @@ namespace Clinical.ViewModels
                         await _pageDialogService.DisplayAlertAsync("Alert", "Incorrect Password Please try again", "ok");
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                await _pageDialogService.DisplayAlertAsync("Alert", "Oops! Something went Wrong.. try again", "ok");
+            }
+                
  
         }
 
