@@ -15,8 +15,19 @@ namespace Clinical.ViewModels
         private IUserProfile _userProfile;
         private IDatabase _database;
 
-        public ApptsClass appointment { get; set; }
+        public Appointment appointment { get; set; }
 
+        private DelegateCommand<Appointment> _requestCommand;
+        public DelegateCommand<Appointment> RequestCommand =>
+    _requestCommand ?? (_requestCommand = new DelegateCommand<Appointment>(ExecuteRequestCommand));
+
+        private async void ExecuteRequestCommand(Appointment appointment)
+        {
+            var user = _userProfile.GetLoggedInUser();
+            var apptmntRequest = await _database.GetAppointmentsByClientDetailId(user.ID);
+
+            //await _database.SaveItemAsync(appointment);
+        }
 
         private ClientDetails _loggedInUser;
         public ClientDetails LoggedInUser

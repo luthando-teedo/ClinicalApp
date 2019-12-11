@@ -44,9 +44,16 @@ namespace Clinical.ViewModels
             }
         }
 
+       
+
         public async Task<ClientDetails> GetClientDetailsByUserName(string userName)
         {
             return await database.Table<ClientDetails>().Where(x => x.UserName == userName).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Appointment>> GetAppointmentsByClientDetailId(int id)
+        {
+            return await database.Table<Appointment>().Where(x => x.ClientDetailId == id).ToListAsync();
         }
 
         public Task<List<ClientDetails>> GetItemsAsync()

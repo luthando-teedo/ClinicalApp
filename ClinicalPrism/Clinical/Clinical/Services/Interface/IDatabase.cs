@@ -11,6 +11,7 @@ namespace Clinical.Services.Interface
     {
         Task<int> SaveItemAsync(ClientDetails clientDetails);
         Task<ClientDetails> GetClientDetailsByUserName(string userName);
+        Task<List<Appointment>> GetAppointmentsByClientDetailId(int id);
 
     }
 }
