@@ -3,28 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             xmlns:custommaps="clr-namespace:ControlExamples.Controls.Maps;assembly=ControlExamples"
+            
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Clinical.Views.MapPage"
-            >
-    <Grid Margin="10,35,10,10">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <custommaps:CustomMap x:Name="map"
-                  ItemsSource="{Binding Locations}" CenterRegion="{Binding CenterPosition}">
-            <maps:Map.ItemTemplate>
-                <DataTemplate>
-                    <custommaps:CustomPin Position="{Binding Position}"
-                              Address="{Binding Address}"
-                              Label="{Binding Description}"
-                                    Name="{Binding PlaceName}"   
-                                          Url="{Binding Url}"/>
-                </DataTemplate>
-            </maps:Map.ItemTemplate>
-        </custommaps:CustomMap>
-    </Grid>
+            BackgroundImageSource="">
+
+    <StackLayout>
+        <Button Text="Get Direction"/>
+    </StackLayout>
 
 
 </ContentPage>
