@@ -2,15 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-            
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Clinical.Views.MapPage"
-            BackgroundImageSource="Glob.jpg">
-
+             BackgroundImageSource="Glob.jpg">
+    
     <StackLayout>
-        <Button Text="Get Direction"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Your Address" Grid.Column="0" Grid.Row="0" TextColor="White" FontSize="Title"/>
+            <Entry Text="{Binding Direction.address}" 
+                   Grid.Column="0" 
+                   Grid.Row="1" 
+                   TextColor="white"/>
+            <Label Text="Maps"/>
+        </Grid>
+        <Button Text="Get Direction" Command="GetDirections"/>
+
     </StackLayout>
-
-
 </ContentPage>
