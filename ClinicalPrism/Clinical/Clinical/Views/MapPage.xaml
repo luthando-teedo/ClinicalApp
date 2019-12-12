@@ -6,7 +6,7 @@
             
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Clinical.Views.MapPage"
-            BackgroundImageSource="">
+            BackgroundImageSource="Glob.jpg">
 
     <StackLayout>
         <Button Text="Get Direction"/>
