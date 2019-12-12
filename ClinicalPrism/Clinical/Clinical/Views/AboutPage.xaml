@@ -4,5 +4,15 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Clinical.Views.AboutPage">
+
+    <StackLayout>
+        <Image Source=".jpg"
+                   />
+        <Frame BackgroundColor="#99EC0303" 
+                   HeightRequest="179" 
+                   Margin="0,-225,0,0">
+
+        </Frame>
+    </StackLayout>
   
 </ContentPage>
