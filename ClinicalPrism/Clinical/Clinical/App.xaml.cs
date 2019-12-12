@@ -53,6 +53,7 @@ namespace Clinical
 
             containerRegistry.RegisterForNavigation<RequestPage, RequestPageViewModel>();
             containerRegistry.RegisterForNavigation<EditPage, EditPageViewModel>();
+            containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
         }
     }
 }
