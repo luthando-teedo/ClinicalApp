@@ -28,7 +28,7 @@ namespace Clinical.ViewModels
 
         private DelegateCommand<ClientDetails> _submitCommand;
         public DelegateCommand<ClientDetails> SubmitCommand =>
-    _submitCommand ?? (_submitCommand = new DelegateCommand<ClientDetails>(ExecuteSubmitCommand));
+        _submitCommand ?? (_submitCommand = new DelegateCommand<ClientDetails>(ExecuteSubmitCommand));
 
         private DelegateCommand _pickPhotoCommand;
         public DelegateCommand PickPhotoCommand =>

@@ -23,8 +23,8 @@ namespace Clinical.ViewModels
 
         private async void ExecuteRequestCommand(Appointment appointment)
         {
-            var user = _userProfile.GetLoggedInUser();
-            var apptmntRequest = await _database.GetAppointmentsByClientDetailId(user.ID);
+            //var user = _userProfile.GetLoggedInUser();
+            //var RecentAppt = await _database.GetAppointmentsByClientDetailId(appointment.ClientDetailId);
 
             //await _database.SaveItemAsync(appointment);
         }

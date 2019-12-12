@@ -91,7 +91,8 @@
                    PlaceholderColor="LightBlue"
                    Grid.Row="3"
                    Grid.Column="1"
-                   TextColor="White"/>
+                   TextColor="White"
+                    Text="{Binding Appointment.Date}"/>
 
 
 
@@ -99,7 +100,8 @@
         <Editor Placeholder="Reason For Appointment"
                     BackgroundColor="#90ffffff"
                     Margin="10"
-                    HeightRequest="150"/>
+                    HeightRequest="150"
+                    Text="{Binding Appointment.Reason}"/>
         <Button Text="REQUEST"
                 HorizontalOptions="CenterAndExpand"
                 WidthRequest="400"

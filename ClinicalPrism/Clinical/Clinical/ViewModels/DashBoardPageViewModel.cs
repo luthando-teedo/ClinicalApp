@@ -29,7 +29,7 @@ namespace Clinical.ViewModels
 
         private async void ExecuteViewFolderCommand()
         {
-            await NavigationService.NavigateAsync("MasterDetail/NavigationPage/RequestPage", useModalNavigation: true);
+            await NavigationService.NavigateAsync("MasterDetail/NavigationPage/FolderPage", useModalNavigation: true);
         }
 
         public DashBoardPageViewModel(INavigationService navigation, IUserProfile userProfile) : base(navigation)
