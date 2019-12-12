@@ -141,7 +141,7 @@ namespace Clinical.Services
             menuItem = new MenuItem();
             menuItem.MenuItemId = 5;
             menuItem.MenuItemName = "About Us";
-            menuItem.NavigationPath = "NavigationPage/ViewPdfView";
+            menuItem.NavigationPath = "NavigationPage/AboutPage";
             menuItem.MenuOrder = 6;
             menuItem.MenuType = MenuTypeEnum.UnSecured;
             menuItem.ImageName = "infor.png";

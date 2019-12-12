@@ -6,13 +6,66 @@
              x:Class="Clinical.Views.AboutPage">
 
     <StackLayout>
-        <Image Source=".jpg"
+        <Image Source="clinicBG.jpg"
                    />
-        <Frame BackgroundColor="#99EC0303" 
-                   HeightRequest="179" 
-                   Margin="0,-225,0,0">
+        <Frame BackgroundColor="#99000000" 
+                   HeightRequest="255" 
+                   Margin="0,-240,0,0">
+            <Label Text="ABOUT US" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   FontSize="40"
+                   FontAttributes="Bold"/>
 
         </Frame>
+        <ScrollView>
+            <StackLayout>
+        <Label Text="The idea behind"
+               FontSize="18"
+               Margin="10"
+               FontAttributes="Bold"/>
+
+        <Label Text="Fresenius is a global healthcare group 
+               providing products and services for dialysis, 
+               hospitals, and the medical care of patients 
+               at home. In addition, Fresenius focuses on hospital 
+               operation as well as on engineering and services for
+               hospitals and other healthcare facilities. The Fresenius 
+               Group consists of four business segments,
+               each of which is responsible for its own 
+               business operations worldwide: Fresenius Medical Care,
+               Fresenius Kabi, Fresenius Helios and Fresenius Vamed."
+               Margin="10,0,0,0"/>
+
+        <Label Text="The Aim"
+               FontSize="18"
+               Margin="10"
+               FontAttributes="Bold"/>
+
+        <Label Text="Fresenius is a global healthcare group 
+               providing products and services for dialysis, 
+               hospitals, and the medical care of patients 
+               at home. In addition, Fresenius focuses on hospital 
+               operation as well as on engineering and services for
+               hospitals and other healthcare facilities. The Fresenius 
+               Group consists of four business segments,
+               each of which is responsible for its own 
+               business operations worldwide: Fresenius Medical Care,
+               Fresenius Kabi, Fresenius Helios and Fresenius Vamed."
+               Margin="10,0,0,0"/>
+
+                <Label Text="Who will it Help"
+               FontSize="18"
+               Margin="10"
+               FontAttributes="Bold"/>
+
+                <Label Text="Fresenius is a global healthcare group 
+               providing products and services for dialysis, 
+               hospitals, and the medical care of patients 
+               at home. In addition."
+               Margin="10,0,0,0"/>
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
   
 </ContentPage>
