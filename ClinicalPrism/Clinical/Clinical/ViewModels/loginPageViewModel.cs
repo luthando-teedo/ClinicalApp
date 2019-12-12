@@ -110,7 +110,7 @@ namespace Clinical.ViewModels
             }
             catch (Exception ex)
             {
-                await _pageDialogService.DisplayAlertAsync("Alert", "Oops! Something went Wrong.. try again", "ok");
+                await _pageDialogService.DisplayAlertAsync("Alert", "This User Does not Exist", "ok");
             }
                 
  

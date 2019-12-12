@@ -44,7 +44,19 @@ namespace Clinical.ViewModels
             }
         }
 
-       
+        public Task<int> SaveItemAsync(Appointment appointment)
+        {
+            if (appointment.ID != 0)
+            {
+                return database.UpdateAsync(appointment);
+            }
+            else
+            {
+                return database.InsertAsync(appointment);
+            }
+        }
+
+
 
         public async Task<ClientDetails> GetClientDetailsByUserName(string userName)
         {

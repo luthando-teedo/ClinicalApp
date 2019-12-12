@@ -110,7 +110,7 @@ namespace Clinical.Services
             menuItem = new MenuItem();
             menuItem.MenuItemId = 4;
             menuItem.MenuItemName = "Edit Profile";
-            menuItem.NavigationPath = "NavigationPage/OtherView";
+            menuItem.NavigationPath = "NavigationPage/EditPage";
             menuItem.MenuOrder = 4;
             menuItem.MenuType = MenuTypeEnum.Secured;
             menuItem.ImageName = "profile.png";
@@ -125,13 +125,24 @@ namespace Clinical.Services
             menuItem.MenuType = MenuTypeEnum.Secured;
             menuItem.ImageName = "home.png";
 
+
+            _allMenuItems.Add(menuItem);
+
+            menuItem = new MenuItem();
+            menuItem.MenuItemId = 7;
+            menuItem.MenuItemName = "Book Appointment";
+            menuItem.NavigationPath = "NavigationPage/RequestPage";
+            menuItem.MenuOrder = 5;
+            menuItem.MenuType = MenuTypeEnum.Secured;
+            menuItem.ImageName = "book.png";
+
             _allMenuItems.Add(menuItem);
 
             menuItem = new MenuItem();
             menuItem.MenuItemId = 5;
             menuItem.MenuItemName = "About Us";
             menuItem.NavigationPath = "NavigationPage/ViewPdfView";
-            menuItem.MenuOrder = 5;
+            menuItem.MenuOrder = 6;
             menuItem.MenuType = MenuTypeEnum.UnSecured;
             menuItem.ImageName = "infor.png";
 

@@ -102,28 +102,28 @@
                        Margin="15,15,0,0"
                        FontAttributes="Bold"/>
 
-                <Label Text="APPOINTMENTS HISTORY"
+                <!--<Label Text="APPOINTMENTS HISTORY"
                        Grid.Row="0"
                        Grid.Column="1"
                        Margin="15,15,0,0"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold"/>-->
 
             </Grid>
 
             <FlexLayout>
                 <StackLayout>
-                    <Frame WidthRequest="150"
+                    <Frame WidthRequest="350"
                            HeightRequest="30"
-                           BackgroundColor="#f1f1f1" 
-                           Margin="10,0,0,0">
-                        <!--<StackLayout>
-                            <Label Text="Date: 29 November 2019"/>
-                        </StackLayout>-->
+                           BackgroundColor="#90000000" 
+                           Margin="10,0,0,0"
+                           CornerRadius="10">
+                        
                         <ListView>
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <Label Text="Date: "/>
+                                        <Label Text="{Binding LoggedInUser.PhoneNumber}"
+                                               TextColor="Red"/>
                                     </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>

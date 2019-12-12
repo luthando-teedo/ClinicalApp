@@ -3,6 +3,99 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Clinical.Views.EditPage">
+             x:Class="Clinical.Views.EditPage"
+             BackgroundImageSource="stethoscope.jpg">
+    
+    
+    <StackLayout BackgroundColor="#50ffffff">
+        <Frame CornerRadius="50" 
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   IsClippedToBounds="True"  
+                   HorizontalOptions="Center"
+                   Margin="0,50,0,0">
+
+            <Image Source="{Binding PickImage,Path= Stream}"
+                       Scale="2.2"/>
+
+        </Frame>
+
+        <Frame CornerRadius="50" 
+                   HeightRequest="1"
+                   WidthRequest="1"
+                   BackgroundColor="#EC0303"
+                   IsClippedToBounds="True"  
+                   HorizontalOptions="Center"
+                   Margin="50,-40,0,0">
+
+            <ImageButton Source="loadPic.png"
+                       Scale="15"
+                       Command="{Binding PickPhotoCommand}"/>
+
+        </Frame>
+
+        <Grid Margin="10,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Entry Placeholder="Username" 
+                       Grid.Row="0" 
+                       Grid.Column="0"
+                       Text="{Binding LoggedInUser.UserName}"
+                       />
+
+            <Entry Placeholder="Fullname" 
+                       Grid.Row="0" 
+                       Grid.Column="1"
+                       Text="{Binding LoggedInUser.FullName}"
+                       />
+            <!--<Entry Placeholder="Password"
+                       IsPassword="True"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       Text="{Binding LoggedInUser.Passrd}"-->
+                       
+            <Entry Placeholder="ID Number"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="1"
+                       Text="{Binding LoggedInUser.IdNumber}"
+                       />
+            <Entry Placeholder="Phone Number"
+                       Grid.Column="0"
+                       Grid.Row="2"
+                       Margin="0,10,0,0"
+                       Text="{Binding LoggedInUser.PhoneNumber}"/>
+
+            <Entry Placeholder="Email Address"
+                       Grid.Column="1"
+                       Grid.Row="2"
+                       Margin="0,10,0,0"
+                       Text="{Binding LoggedInUser.EmailAddress}"/>
+
+            <Entry Placeholder="Home Address"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="3"
+                       Margin="0,10,0,0"
+                       Text="{Binding LoggedInUser.PostalAddress}"/>
+        </Grid>
+
+        <Button Text="SAVE"
+                    CornerRadius="50"
+                    BackgroundColor="#EC0303"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    WidthRequest="300"
+                    Margin="0,20,0,0"
+                    Command="{Binding SubmitCommand}"/>
+    </StackLayout>
   
 </ContentPage>

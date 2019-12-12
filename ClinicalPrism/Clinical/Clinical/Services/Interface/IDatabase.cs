@@ -10,6 +10,7 @@ namespace Clinical.Services.Interface
     public interface IDatabase
     {
         Task<int> SaveItemAsync(ClientDetails clientDetails);
+        Task<int> SaveItemAsync(Appointment appointment);
         Task<ClientDetails> GetClientDetailsByUserName(string userName);
         Task<List<Appointment>> GetAppointmentsByClientDetailId(int id);
 

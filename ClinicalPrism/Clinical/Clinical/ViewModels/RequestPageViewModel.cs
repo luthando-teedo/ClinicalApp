@@ -15,7 +15,13 @@ namespace Clinical.ViewModels
         private IUserProfile _userProfile;
         private IDatabase _database;
 
-        public Appointment appointment { get; set; }
+        //public Appointment appointment { get; set; }
+        private Appointment _appointment;
+        public Appointment Appointment
+        {
+            get { return _appointment; }
+            set { SetProperty(ref _appointment, value); }
+        }
 
         private DelegateCommand<Appointment> _requestCommand;
         public DelegateCommand<Appointment> RequestCommand =>
@@ -24,9 +30,9 @@ namespace Clinical.ViewModels
         private async void ExecuteRequestCommand(Appointment appointment)
         {
             //var user = _userProfile.GetLoggedInUser();
-            //var RecentAppt = await _database.GetAppointmentsByClientDetailId(appointment.ClientDetailId);
+           // var RecentAppt = await _database.GetAppointmentsByClientDetailId(appointment.ClientDetailId);
 
-            //await _database.SaveItemAsync(appointment);
+            await _database.SaveItemAsync(appointment);
         }
 
         private ClientDetails _loggedInUser;
@@ -40,6 +46,9 @@ namespace Clinical.ViewModels
             _userProfile = userProfile;
 
             _database = database;
+
+            var stuff = new Appointment();
+            Appointment = stuff;
         }
 
         public override void Initialize(INavigationParameters parameters)
