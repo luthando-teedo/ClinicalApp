@@ -24,7 +24,8 @@
                 <Entry Placeholder="Username" 
                WidthRequest="300"
                PlaceholderColor="White"
-               Text="{Binding LoginClient.UserName}"/>
+               Text="{Binding LoginClient.UserName}"
+                       TextColor="White"/>
 
                 <Image Source="lock.png"
                    Margin="250,0,0,-36"/>
@@ -32,7 +33,9 @@
                 <Entry Placeholder="Password"
                    Margin="0,0,0,20"
                    PlaceholderColor="White"
-                   Text="{Binding LoginClient.Passrd}"/>
+                   Text="{Binding LoginClient.Passrd}"
+                       IsPassword="True"
+                       TextColor="White"/>
 
                 <Button Text="LOGIN" 
                 CornerRadius="50" 

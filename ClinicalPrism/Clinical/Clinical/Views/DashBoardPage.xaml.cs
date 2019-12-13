@@ -8,5 +8,10 @@ namespace Clinical.Views
         {
             InitializeComponent();
         }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+        }
     }
 }

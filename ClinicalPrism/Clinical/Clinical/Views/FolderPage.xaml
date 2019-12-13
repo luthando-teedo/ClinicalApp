@@ -22,7 +22,7 @@
             </Frame>
             <FlexLayout Margin="0,-26,0,0">
                 <Label Text="{Binding LoggedInUser.FullName}"
-                   Margin="110,-45,0,0"
+                   Margin="100,-45,0,0"
                    FontSize="35"
                    TextColor="White"/>
                 
@@ -30,7 +30,7 @@
 
             <Label Text="{Binding LoggedInUser.EmailAddress}"
                    TextColor="White"
-                   Margin="125,-10,0,0"
+                   Margin="100,-10,0,0"
                    FontSize="18"
                    />
 

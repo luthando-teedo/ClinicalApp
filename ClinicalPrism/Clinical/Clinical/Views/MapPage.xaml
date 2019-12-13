@@ -4,10 +4,12 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Clinical.Views.MapPage"
-             BackgroundImageSource="Glob.jpg">
+             BackgroundImageSource="Glob.jpg"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
     
-    <StackLayout>
-        <Grid>
+    <ScrollView>
+        <StackLayout>
+        <!--<Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -23,8 +25,19 @@
                    Grid.Row="1" 
                    TextColor="white"/>
             <Label Text="Maps"/>
-        </Grid>
-        <Button Text="Get Direction" Command="GetDirections"/>
-
-    </StackLayout>
+        </Grid>-->
+        <!--<Button Text="Get Direction"/>-->
+            <maps:Map x:Name="Map"
+                  ItemsSource="{Binding PositionList}">
+                <maps:Map.ItemTemplate>
+                    <DataTemplate>
+                        <maps:Pin Position="{Binding Position}"
+                                  Address="{Binding Address}"
+                                  Label="{Binding Description}"  />
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>
+            </maps:Map>
+            
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

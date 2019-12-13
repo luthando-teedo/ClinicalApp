@@ -8,8 +8,8 @@
 
     <StackLayout BackgroundColor="#90000000">
         <Frame CornerRadius="50" 
-                   HeightRequest="60"
-                   WidthRequest="60"
+                   HeightRequest="30"
+                   WidthRequest="30"
                    IsClippedToBounds="True"  
                    HorizontalOptions="Start"
                    Margin="20,30,0,0">
@@ -19,14 +19,14 @@
                         />
 
         </Frame>
-        <!--<Label Text="{Binding LoggedInUser.FullName}"
-               Margin="130,-80,0,0"
+        <Label Text="{Binding LoggedInUser.FullName}"
+               Margin="100,-80,0,0"
                FontSize="26"
                TextColor="Red"/>
         <Label Text="{Binding LoggedInUser.EmailAddress}"
-               Margin="130,-10,0,0"
+               Margin="100,-10,0,0"
                TextColor="White"
-               FontSize="18"/>-->
+               FontSize="18"/>
 
         <Grid Margin="15">
             <Grid.RowDefinitions>
@@ -39,15 +39,15 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Text="Patient ID"
+            <Label Text="Patient Name"
                    Grid.Row="0"
                    Grid.Column="0"
                    FontSize="Large"
                    Margin="0,10,0,-20"
                    TextColor="White"/>
-            <Entry Text="{Binding Appointment.ClientDetailId}" 
+            <Entry Text="{Binding CurrentAppt.Name}" 
                    PlaceholderColor="Darkgray"
-                   Placeholder="ID Number"
+                   Placeholder="Name"
                    Grid.Row="1"
                    Grid.Column="0"
                    TextColor="White"/>
@@ -58,26 +58,27 @@
                    FontSize="Large"
                    Margin="0,10,0,-20"
                    TextColor="White"/>
-            <Entry Text="{Binding Appointment.Time}" 
+            <Entry Text="{Binding CurrentAppt.Time}" 
                    Placeholder="*Requered!*" 
                    PlaceholderColor="DarkRed"
                    Grid.Row="1"
                    Grid.Column="1"
                    TextColor="White"/>
+    
 
-
-            <Label Text="Home Address"
+            <Label Text="Department"
                    Grid.Row="2"
                    Grid.Column="0"
                    FontSize="Large"
                    Margin="0,10,0,-20"
                    TextColor="White"/>
-            <Entry Text="{Binding Appointment.Address}" 
-                   PlaceholderColor="DarkRed"
-                   Placeholder="*Requered!*"
+            <Entry Text="{Binding CurrentAppt.Department}" 
+                   Placeholder="department" 
+                   PlaceholderColor="Darkgray"
                    Grid.Row="3"
                    Grid.Column="0"
                    TextColor="White"/>
+            
 
 
             <Label Text="Date"
@@ -92,7 +93,7 @@
                    Grid.Row="3"
                    Grid.Column="1"
                    TextColor="White"
-                    Text="{Binding Appointment.Date}"/>
+                    Text="{Binding CurrentAppt.Date}"/>
 
 
 
@@ -100,8 +101,8 @@
         <Editor Placeholder="Reason For Appointment"
                     BackgroundColor="#90ffffff"
                     Margin="10"
-                    HeightRequest="150"
-                    Text="{Binding appointment.Reason}"/>
+                    HeightRequest="180"
+                    Text="{Binding CurrentAppt.Reason}"/>
         <Button Text="REQUEST"
                 HorizontalOptions="CenterAndExpand"
                 WidthRequest="400"

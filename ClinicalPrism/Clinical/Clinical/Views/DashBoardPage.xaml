@@ -110,29 +110,49 @@
 
             </Grid>
 
-            <FlexLayout>
+            
                 <StackLayout>
-                    <Frame WidthRequest="350"
-                           HeightRequest="30"
-                           BackgroundColor="#90000000" 
-                           Margin="10,0,0,0"
-                           CornerRadius="10">
-                        
-                        <ListView>
+                    
+
+                        <ListView ItemsSource="{Binding AllAppt}" 
+                                  HasUnevenRows="True"                                    
+                                  Margin="10,0,10,0"
+                                  HeightRequest="145"
+                                  >
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <Label Text="{Binding LoggedInUser.PhoneNumber}"
-                                               TextColor="Red"/>
-                                    </ViewCell>
+                                    <Frame BackgroundColor="#90000000"
+                                           CornerRadius="10"
+                                           Margin="0,0,0,5">
+                                        <StackLayout>
+                                        <FlexLayout>
+                                        <Label Text="Name:  "/>
+                                        <Label Text="{Binding Name}" TextColor="White"/>
+                                        </FlexLayout>
+                                        <FlexLayout>
+                                        <Label Text="Date:  "/>
+                                        <Label Text="{Binding Date}" TextColor="White"/>
+                                        </FlexLayout>
+                                        <FlexLayout>
+                                        <Label Text="Department:  "/>
+                                        <Label Text="{Binding Department}" TextColor="White"/>
+                                        </FlexLayout>
+                                        <FlexLayout>
+                                        <Label Text="Reason:  "/>
+                                        <Label Text="{Binding Reason}" TextColor="White"/>
+                                        </FlexLayout>
+                                    </StackLayout>
+                                    </Frame>
+                                </ViewCell>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                    </Frame>
+                    
 
                 </StackLayout>
 
-            </FlexLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 
